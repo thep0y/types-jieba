@@ -4,19 +4,17 @@
 # @Email:     thepoy@163.com
 # @File Name: setup.py
 # @Created:   2022-03-31 09:43:35
-# @Modified:  2022-03-31 10:23:54
+# @Modified:  2022-03-31 18:45:33
 
 import codecs
 
 from setuptools import setup, find_packages
 
-print(find_packages())
-
 
 with codecs.open("README.md", "r", "utf-8") as fd:
     setup(
         name="types-jieba",
-        version="0.0.1",
+        version="0.0.2",
         description="""
         jieba 类型库
         """,
@@ -26,7 +24,7 @@ with codecs.open("README.md", "r", "utf-8") as fd:
         author_email="thepoy@163.com",
         url="https://github.com/thep0y/types-jieba",
         license="MIT",
-        keywords="jieba 中文 分词",
+        keywords="jieba 中文 分词 类型",
         packages=["jieba-stubs"],
         package_data={
             "jieba-stubs": [
