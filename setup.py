@@ -4,17 +4,17 @@
 # @Email:     thepoy@163.com
 # @File Name: setup.py
 # @Created:   2022-03-31 09:43:35
-# @Modified:  2022-03-31 18:45:33
+# @Modified:  2022-08-03 09:58:55
 
 import codecs
 
-from setuptools import setup, find_packages
+from setuptools import setup
 
 
 with codecs.open("README.md", "r", "utf-8") as fd:
     setup(
         name="types-jieba",
-        version="0.0.2",
+        version="0.0.4",
         description="""
         jieba 类型库
         """,
