@@ -1,6 +1,6 @@
 from io import TextIOWrapper
 from multiprocessing.pool import Pool
-from typing import Dict, List, Optional, Tuple, Union, Generator
+from typing import Dict, List, Tuple, Generator
 from re import Pattern
 from threading import RLock
 
@@ -12,12 +12,12 @@ def _get_abs_path(path: str) -> str:
     ...
 
 
-DEFAULT_DICT: Optional[str]
+DEFAULT_DICT: str | None
 DEFAULT_DICT_NAME: str
 
 DICT_WRITING: dict
 
-pool: Optional[Pool]
+pool: Pool | None
 
 re_userdict: Pattern[str]
 re_eng: Pattern[str]
@@ -26,28 +26,28 @@ re_skip_default: Pattern[str]
 
 
 DAGType = Dict[int, List[int]]
-DictFileType = Union[str, TextIOWrapper]
+DictFileType = str | TextIOWrapper
 
 
 def setLogLevel(log_level: int) -> None:
     ...
 
 
-class Tokenizer(object):
+class Tokenizer:
     lock: RLock
     dictionary: str
     FREQ: Dict[str, int]
     user_word_tag_tab: Dict[str, str]
     total: int
     initialized: bool
-    tmp_dir: Optional[str]
-    cache_file: Optional[str]
+    tmp_dir: str | None
+    cache_file: str | None
 
     @staticmethod
     def gen_pfdict(f: DictFileType) -> Tuple[Dict[str, int], int]:
         ...
 
-    def initialize(self, dictionary: Optional[str] = None) -> None:
+    def initialize(self, dictionary: str | None = ...) -> None:
         ...
 
     def check_initialized(self) -> None:
@@ -67,27 +67,27 @@ class Tokenizer(object):
     def cut(
         self,
         sentence: str,
-        cut_all: bool = False,
-        HMM: bool = True,
-        use_paddle: bool = False,
+        cut_all: bool = ...,
+        HMM: bool = ...,
+        use_paddle: bool = ...,
     ) -> Generator[str, None, None]:
         ...
 
     def cut_for_search(
-        self, sentence: str, HMM: bool = True
+        self, sentence: str, HMM: bool = ...
     ) -> Generator[str, None, None]:
         ...
 
     def lcut(
         self,
         sentence: str,
-        cut_all: bool = False,
-        HMM: bool = True,
-        use_paddle: bool = False,
+        cut_all: bool = ...,
+        HMM: bool = ...,
+        use_paddle: bool = ...,
     ) -> List[str]:
         ...
 
-    def lcut_for_search(self, sentence: str, HMM: bool = True) -> List[str]:
+    def lcut_for_search(self, sentence: str, HMM: bool = ...) -> List[str]:
         ...
 
     def get_dict_file(self) -> TextIOWrapper:
@@ -96,19 +96,17 @@ class Tokenizer(object):
     def load_userdict(self, f: DictFileType) -> None:
         ...
 
-    def add_word(
-        self, word: str, freq: Optional[int] = None, tag: Optional[str] = None
-    ):
+    def add_word(self, word: str, freq: str | int | None = ..., tag: str | None = ...):
         ...
 
     def del_word(self, word: str) -> None:
         ...
 
-    def suggest_freq(self, segment: Union[str, bytes], tune: bool = False) -> int:
+    def suggest_freq(self, segment: str | bytes, tune: bool = ...) -> int:
         ...
 
     def tokenize(
-        self, unicode_sentence: str, mode: str = "default", HMM: bool = True
+        self, unicode_sentence: str, mode: str = ..., HMM: bool = ...
     ) -> Generator[Tuple[str, int, int], None, None]:
         ...
 
@@ -137,7 +135,7 @@ tokenize = dt.tokenize
 user_word_tag_tab = dt.user_word_tag_tab
 
 
-def enable_parallel(processnum: Optional[int] = None) -> None:
+def enable_parallel(processnum: int | None = ...) -> None:
     ...
 
 

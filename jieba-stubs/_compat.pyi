@@ -1,5 +1,5 @@
 from io import BufferedReader, TextIOWrapper
-from typing import Dict, Tuple, Type, Union
+from typing import Dict, Tuple, Type
 
 check_paddle_install: Dict[str, bool]
 
@@ -15,9 +15,9 @@ def get_module_res(
     ...
 
 
-def strdecode(sentence: Union[str, bytes]) -> str:
+def strdecode(sentence: str | bytes) -> str:
     ...
 
 
-def resolve_filename(f: Union[str, TextIOWrapper]) -> str:
+def resolve_filename(f: str | TextIOWrapper) -> str:
     ...

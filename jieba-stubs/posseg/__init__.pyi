@@ -1,4 +1,4 @@
-from typing import List, Optional, Pattern, Generator, Dict, Tuple
+from typing import List, Pattern, Generator, Dict, Tuple
 from io import TextIOWrapper
 
 TransType = Dict[Tuple[str, str], Dict[Tuple[str, str], float]]
@@ -34,7 +34,7 @@ class pair(object):
 
 
 class POSTokenizer(object):
-    def initialize(self, dictionary: Optional[str] = None) -> None:
+    def initialize(self, dictionary: str | None = ...) -> None:
         ...
 
     def load_word_tag(self, f: TextIOWrapper) -> None:
@@ -43,10 +43,10 @@ class POSTokenizer(object):
     def makesure_userdict_loaded(self) -> None:
         ...
 
-    def cut(self, sentence: str, HMM: bool = True) -> Generator[pair, None, None]:
+    def cut(self, sentence: str, HMM: bool = ...) -> Generator[pair, None, None]:
         ...
 
-    def lcut(self, sentence: str, HMM: bool = True) -> List[pair]:
+    def lcut(self, sentence: str, HMM: bool = ...) -> List[pair]:
         ...
 
 
@@ -56,10 +56,10 @@ initialize = dt.initialize
 
 
 def cut(
-    sentence: str, HMM: bool = True, use_paddle: bool = False
+    sentence: str, HMM: bool = ..., use_paddle: bool = ...
 ) -> Generator[pair, None, None]:
     ...
 
 
-def lcut(sentence: str, HMM: bool = True, use_paddle: bool = False) -> List[pair]:
+def lcut(sentence: str, HMM: bool = ..., use_paddle: bool = ...) -> List[pair]:
     ...

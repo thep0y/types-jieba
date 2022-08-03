@@ -2,7 +2,7 @@ from collections import defaultdict
 from jieba import Tokenizer
 from jieba.posseg import pair
 from .tfidf import KeywordExtractor
-from typing import List, Set, Tuple, Union
+from typing import List, Set, Tuple
 
 
 class UndirectWeightedGraph:
@@ -29,9 +29,9 @@ class TextRank(KeywordExtractor):
     def textrank(
         self,
         sentence: str,
-        topK: int = 20,
-        withWeight: bool = False,
-        allowPOS: Tuple[str, ...] = ("ns", "n", "vn", "v"),
-        withFlag: bool = False,
-    ) -> List[Union[Tuple[str, float], str]]:
+        topK: int = ...,
+        withWeight: bool = ...,
+        allowPOS: Tuple[str, ...] = ...,
+        withFlag: bool = ...,
+    ) -> List[Tuple[str, float] | str]:
         ...
