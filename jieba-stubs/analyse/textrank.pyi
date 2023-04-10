@@ -4,7 +4,7 @@
 # @Email:       thepoy@163.com
 # @File Name:   textrank.pyi
 # @Created At:  2022-08-03 09:47:47
-# @Modified At: 2023-04-07 14:00:55
+# @Modified At: 2023-04-10 18:29:55
 # @Modified By: thepoy
 
 from collections import defaultdict
@@ -43,4 +43,4 @@ class TextRank(KeywordExtractor):
         withWeight: bool = ...,
         allowPOS: Tuple[str, ...] = ...,
         withFlag: bool = ...,
-    ) -> List[Tuple[str, float] | str]: ...
+    ) -> List[Tuple[str, float] | Tuple[pair, float] | str]: ...
