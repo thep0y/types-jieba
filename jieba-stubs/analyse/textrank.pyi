@@ -36,3 +36,11 @@ class TextRank(KeywordExtractor):
         allowPOS: Tuple[str, ...] = ...,
         withFlag: bool = ...,
     ) -> List[Tuple[str, float] | str]: ...
+    def extract_tags(
+        self,
+        sentence: str,
+        topK: int = ...,
+        withWeight: bool = ...,
+        allowPOS: Tuple[str, ...] = ...,
+        withFlag: bool = ...,
+    ) -> List[Tuple[str, float] | str]: ...
